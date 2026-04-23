@@ -1,204 +1,298 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    .hero-wrapper {
-        position: relative;
-        background: #fff;
-        min-height: 80vh;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
 
-    /* THE ARMILLARY GLOBE AREA */
-    .hero-visual {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 60%;
-        height: 100%;
-        background-image: url('/images/globe.png'); /* REPLACE THIS PATH */
-        background-size: cover;
-        background-position: center right;
-        z-index: 1;
-    }
 
-    /* The Fade Effect from your image */
-    .hero-visual::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right, 
-            rgba(255,255,255,1) 0%, 
-            rgba(255,255,255,0.9) 10%, 
-            rgba(255,255,255,0) 50%);
-        z-index: 2;
-    }
-
-    /* THE WATERMARK BEHIND THE GLOBE */
-    .hero-watermark {
-        position: absolute;
-        bottom: -20px;
-        right: 20px;
-        font-size: 10rem;
-        font-weight: 900;
-        color: rgba(0, 0, 0, 0.04);
-        letter-spacing: 5px;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    /* TEXT STYLES */
-    .hero-content { position: relative; z-index: 10; max-width: 700px; }
-    .hero-title { font-size: 5.5rem; font-weight: 900; line-height: 0.85; letter-spacing: -4px; color: #0b0f19; margin-bottom: 30px; }
-    .text-gradient {
-        background: linear-gradient(to bottom, #101828 40%, #2563eb 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* BUTTONS */
-    .btn-gest-dark { background: #0b0f19; color: #fff; padding: 18px 35px; font-weight: 700; border-radius: 0; text-decoration: none; display: inline-block; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
-    .btn-gest-outline { border: 1px solid #000; color: #000; padding: 18px 35px; font-weight: 700; border-radius: 0; text-decoration: none; display: inline-block; }
-</style>
-
-<section class="hero-wrapper">
-    <div class="hero-visual"></div>
-    <div class="hero-watermark">GESTAAC</div>
+<section class="relative bg-white min-h-[80vh] flex items-center overflow-hidden">
     
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">
+    <!-- Globe -->
+    <div class="absolute top-0 right-0 w-[60%] h-full bg-cover bg-right z-[1]"
+         style="background-image: url('/images/globe.png');">
+        
+        <!-- Fade -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-[2]"></div>
+    </div>
+
+    <!-- Watermark -->
+    <div class="absolute bottom-[-20px] right-5 text-[10rem] font-black tracking-[5px] text-black/5 z-[2] pointer-events-none">
+        GESTAAC
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+        <div class="max-w-[700px]">
+            
+            <h1 class="text-[5.5rem] font-black leading-[0.85] tracking-[-4px] text-[#0b0f19] mb-8">
                 ELEVATING<br>GLOBAL<br>
-                <span class="text-gradient">EDUCATIONAL STANDARDS</span>
+                <span class="bg-gradient-to-b from-[#101828] to-[#2563eb] bg-clip-text text-transparent">
+                    EDUCATIONAL STANDARDS
+                </span>
             </h1>
-            <p class="text-muted mb-5" style="max-width: 500px; font-size: 1.1rem;">
+
+            <p class="text-gray-500 mb-10 max-w-[500px] text-lg">
                 The Global Education, Skills & Training Accreditation Authority Canada (GESTAAC) provides world-class quality assurance and certification for elite institutions.
             </p>
-            <div class="d-flex gap-3">
-                <a href="#" class="btn-gest-dark">START ASSESSMENT &nbsp; →</a>
-                <a href="#" class="btn-gest-outline">VIEW STANDARDS</a>
+
+            <div class="flex gap-4">
+                <a href="#" class="bg-[#0b0f19] text-white px-8 py-5 font-bold shadow-lg">
+                    START ASSESSMENT →
+                </a>
+                <a href="#" class="border border-black text-black px-8 py-5 font-bold">
+                    VIEW STANDARDS
+                </a>
             </div>
+
         </div>
     </div>
 </section>
 
-<section class="py-5">
-    <div class="container py-5">
-        <h2 class="fw-black mb-2 h1">THE GESTAAC FRAMEWORK</h2>
-        <p class="text-muted mb-5 col-lg-6">Our multi-tiered accreditation system ensures that educational providers meet the rigorous standards of the Global Education, Skills & Training Accreditation Authority.</p>
-        
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="framework-card">
-                    <span class="framework-tag">GEST-01</span>
-                    <div class="framework-icon">🚗</div>
-                    <h3>Academic Institutions</h3>
-                    <p class="small text-muted mb-4">Comprehensive accreditation for universities and colleges maintaining global educational standards.</p>
-                    <ul class="list-gest">
-                        <li>Institutional Review</li>
-                        <li>Quality Assurance</li>
-                        <li>Global Recognition</li>
-                    </ul>
-                    <a href="#" class="btn btn-link text-dark fw-bold mt-3 p-0 text-decoration-none">View Standards →</a>
-                </div>
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="mb-16">
+            <h2 class="text-5xl font-black tracking-tight text-[#0f172a] mb-4">
+                THE GESTAAC FRAMEWORK
+            </h2>
+            <p class="text-gray-500 max-w-2xl text-lg leading-relaxed">
+                Our multi-tiered accreditation system ensures that educational providers meet the rigorous standards of the Global Education, Skills & Training Accreditation Authority.
+            </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- CARD 1 -->
+            <div class="group border border-gray-100 p-8 bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+                <span class="text-[11px] font-black tracking-widest text-gray-400">GEST-01</span>
+
+                <div class="text-4xl my-6">🎓</div>
+
+                <h3 class="font-bold text-xl mb-3 text-[#0f172a] group-hover:text-blue-600 transition">
+                    Academic Institutions
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                    Comprehensive accreditation for universities and colleges maintaining global educational standards.
+                </p>
+
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>• Institutional Review</li>
+                    <li>• Quality Assurance</li>
+                    <li>• Global Recognition</li>
+                </ul>
+
+                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                    View Standards →
+                </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="framework-card">
-                    <span class="framework-tag">GEST-02</span>
-                    <div class="framework-icon">🚘</div>
-                    <h3>TVET & Skills</h3>
-                    <p class="small text-muted mb-4">Specialized certification for vocational training centers and technical skill development hubs.</p>
-                    <ul class="list-gest">
-                        <li>Competency Based</li>
-                        <li>Industry Aligned</li>
-                        <li>Practical Assessment</li>
-                    </ul>
-                    <a href="#" class="btn btn-link text-dark fw-bold mt-3 p-0 text-decoration-none">View Standards →</a>
-                </div>
+            <!-- CARD 2 -->
+            <div class="group border border-gray-100 p-8 bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+                <span class="text-[11px] font-black tracking-widest text-gray-400">GEST-02</span>
+
+                <div class="text-4xl my-6">🛠️</div>
+
+                <h3 class="font-bold text-xl mb-3 text-[#0f172a] group-hover:text-blue-600 transition">
+                    TVET & Skills
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                    Specialized certification for vocational training centers and technical skill development hubs.
+                </p>
+
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>• Competency Based</li>
+                    <li>• Industry Aligned</li>
+                    <li>• Practical Assessment</li>
+                </ul>
+
+                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                    View Standards →
+                </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="framework-card border-primary" style="background: #f0f7ff;">
-                    <span class="framework-tag">GEST-03</span>
-                    <div class="framework-icon bg-white">💎</div>
-                    <h3>Professional Training</h3>
-                    <p class="small text-muted mb-4">Validation for technical training providers delivering high-impact professional development.</p>
-                    <ul class="list-gest">
-                        <li>Expert Faculty</li>
-                        <li>Curriculum Audit</li>
-                        <li>Career Impact</li>
-                    </ul>
-                    <a href="#" class="btn btn-link text-dark fw-bold mt-3 p-0 text-decoration-none">View Standards →</a>
-                </div>
+            <!-- CARD 3 (HIGHLIGHT) -->
+            <div class="group border border-blue-200 p-8 bg-[#f0f7ff] shadow-md hover:shadow-2xl transition-all duration-500 relative">
+                
+                <span class="text-[11px] font-black tracking-widest text-blue-600">GEST-03</span>
+
+                <div class="text-4xl my-6">💼</div>
+
+                <h3 class="font-bold text-xl mb-3 text-[#0f172a]">
+                    Professional Training
+                </h3>
+
+                <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+                    Validation for technical training providers delivering high-impact professional development.
+                </p>
+
+                <ul class="text-sm space-y-2 text-gray-700">
+                    <li>• Expert Faculty</li>
+                    <li>• Curriculum Audit</li>
+                    <li>• Career Impact</li>
+                </ul>
+
+                <a href="#" class="inline-block mt-6 text-sm font-bold text-blue-600">
+                    View Standards →
+                </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="framework-card">
-                    <span class="framework-tag">GEST-04</span>
-                    <div class="framework-icon">🚚</div>
-                    <h3>E-Learning Platforms</h3>
-                    <p class="small text-muted mb-4">Digital-first accreditation for online education providers and virtual learning environments.</p>
-                    <ul class="list-gest">
-                        <li>LMS Verification</li>
-                        <li>Content Integrity</li>
-                        <li>Remote Standards</li>
-                    </ul>
-                    <a href="#" class="btn btn-link text-dark fw-bold mt-3 p-0 text-decoration-none">View Standards →</a>
-                </div>
+            <!-- CARD 4 -->
+            <div class="group border border-gray-100 p-8 bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+                <span class="text-[11px] font-black tracking-widest text-gray-400">GEST-04</span>
+
+                <div class="text-4xl my-6">💻</div>
+
+                <h3 class="font-bold text-xl mb-3 text-[#0f172a] group-hover:text-blue-600 transition">
+                    E-Learning Platforms
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                    Digital-first accreditation for online education providers and virtual learning environments.
+                </p>
+
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>• LMS Verification</li>
+                    <li>• Content Integrity</li>
+                    <li>• Remote Standards</li>
+                </ul>
+
+                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                    View Standards →
+                </a>
             </div>
+
         </div>
     </div>
 </section>
 
+<section class="py-20 border-b">
+    <div class="max-w-6xl mx-auto px-6 text-center">
 
-<section class="py-5 border-bottom">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <h2 style="font-size: 3.5rem; color: #cbd5e1; font-weight: 700;">850+</h2>
-                <div style="height: 3px; width: 40px; background: #b35a4f; margin: 10px auto;"></div>
+        <div class="grid md:grid-cols-3 gap-10">
+            @foreach(['850+','1200+','42'] as $stat)
+            <div>
+                <h2 class="text-6xl font-bold text-gray-300">{{ $stat }}</h2>
+                <div class="h-[3px] w-10 bg-[#b35a4f] mx-auto my-3"></div>
             </div>
-            <div class="col-md-4">
-                <h2 style="font-size: 3.5rem; color: #cbd5e1; font-weight: 700;">1200+</h2>
-                <div style="height: 3px; width: 40px; background: #b35a4f; margin: 10px auto;"></div>
-            </div>
-            <div class="col-md-4">
-                <h2 style="font-size: 3.5rem; color: #cbd5e1; font-weight: 700;">42</h2>
-                <div style="height: 3px; width: 40px; background: #b35a4f; margin: 10px auto;"></div>
+            @endforeach
+        </div>
+
+        <div class="mt-12">
+            <p class="text-xs font-bold uppercase text-gray-400 mb-6">
+                Recognized by Global Authorities
+            </p>
+
+            <div class="flex justify-center gap-8 text-xl font-bold text-gray-300 opacity-30">
+                <span>IAF</span>
+                <span>GQAN</span>
+                <span>CSC</span>
+                <span>VTA</span>
+                <span>HER</span>
             </div>
         </div>
-        <div class="text-center mt-5">
-            <p class="small fw-bold text-uppercase opacity-50 mb-4">Recognized by Global Authorities</p>
-            <div class="d-flex justify-content-center gap-5 fw-bold h4 opacity-25">
-                <span>IAF</span> <span>GQAN</span> <span>CSC</span> <span>VTA</span> <span>HER</span>
-            </div>
-        </div>
+
     </div>
 </section>
 
-<section class="testimonial-section center text-center py-5">
-    <div class="container">
-        <h2 class="testimonial-text">"GESTAAC accreditation has elevated our institution's global standing, providing a framework of excellence that resonates with international students."</h2>
-        <div class="avatar-circle">Avatar</div>
-        <h5 class="mb-0 fw-bold">DR. ALISTAIR VANCE</h5>
-        <p class="small text-uppercase text-muted">Director of Global Education, Toronto</p>
-        <div class="mt-4 d-flex justify-content-center gap-4 text-muted">
-            <span>← PREV</span> | <span>NEXT →</span>
+<section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-black text-[#0f172a] mb-16">
+            Trusted by Global Institutions
+        </h2>
+
+        <!-- Slider Wrapper -->
+        <div class="overflow-hidden relative">
+
+            <!-- Slides Track -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+
+                <!-- SLIDE 1 -->
+                <div class="min-w-full flex justify-center snap-center px-4">
+                    <div class="max-w-xl bg-white border border-gray-100 p-10 shadow-lg">
+                        
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            "GESTAAC accreditation has elevated our institution's global standing, providing a framework of excellence that resonates with international students."
+                        </p>
+
+                        <div class="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
+                            AV
+                        </div>
+
+                        <h5 class="font-bold text-[#0f172a]">Dr. Alistair Vance</h5>
+                        <p class="text-xs uppercase text-gray-500">Director of Global Education, Toronto</p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="min-w-full flex justify-center snap-center px-4">
+                    <div class="max-w-xl bg-white border border-gray-100 p-10 shadow-lg">
+                        
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            "The structured accreditation process gave our institution credibility, improved curriculum quality, and strengthened our international partnerships."
+                        </p>
+
+                        <div class="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
+                            MK
+                        </div>
+
+                        <h5 class="font-bold text-[#0f172a]">Mary K. Obeng</h5>
+                        <p class="text-xs uppercase text-gray-500">Academic Director, Accra</p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="min-w-full flex justify-center snap-center px-4">
+                    <div class="max-w-xl bg-white border border-gray-100 p-10 shadow-lg">
+                        
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            "GESTAAC helped us align with global training standards, ensuring our graduates are competitive in international job markets."
+                        </p>
+
+                        <div class="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center font-bold">
+                            JP
+                        </div>
+
+                        <h5 class="font-bold text-[#0f172a]">Jean-Paul Mensah</h5>
+                        <p class="text-xs uppercase text-gray-500">Training Director, Paris</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
+        <!-- Hint -->
+        <p class="text-xs text-gray-400 mt-6">
+            ← Swipe to navigate →
+        </p>
+
     </div>
 </section>
 
-<section class="py-5" style="background: #05070a; color: white;">
-    <div class="container py-5 text-center">
-        <h2 class="display-4 fw-bold mb-5">Elevate Your Institution to Global Standards.</h2>
-        <div class="d-flex justify-content-center align-items-center gap-4">
-            <a href="#" class="text-white text-uppercase small fw-bold opacity-50">Download Standards</a>
-            <a href="#" class="btn px-5 py-3 rounded-0" style="background: #b35a4f; color: white; font-weight: 700;">Begin Application</a>
-            <a href="#" class="text-white text-uppercase small fw-bold opacity-50">Contact Authority</a>
+<section class="py-20 bg-[#05070a] text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold mb-10">
+            Elevate Your Institution to Global Standards.
+        </h2>
+
+        <div class="flex flex-wrap justify-center gap-6 items-center">
+            <a href="#" class="text-sm uppercase opacity-50 font-bold">
+                Download Standards
+            </a>
+
+            <a href="#" class="bg-[#b35a4f] px-10 py-4 font-bold">
+                Begin Application
+            </a>
+
+            <a href="#" class="text-sm uppercase opacity-50 font-bold">
+                Contact Authority
+            </a>
         </div>
+
     </div>
 </section>
 @endsection
