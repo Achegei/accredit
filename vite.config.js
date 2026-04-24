@@ -10,9 +10,12 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+
     server: {
+        host: true, // 👈 important for proper HMR
         watch: {
-            ignored: ['**/storage/framework/views/**'],
+            usePolling: true, // 👈 THIS is the real fix
+            interval: 100,    // optional (makes it more responsive)
         },
     },
 });

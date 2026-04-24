@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function welcom()
+    public function welcome()
     {
         return view('welcome');
     }
@@ -29,5 +29,10 @@ class PagesController extends Controller
     public function contactAuthority()
     {
         return view('contact-authority');
+    }
+
+        public function apply()
+    {
+        return view('apply');
     }
 }

@@ -135,39 +135,107 @@
                 <p class="text-xs text-gray-500 mt-2">Submit your institutional profile for assessment. Response within 48 business hours.</p>
             </div>
 
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">Registrar Name</label>
-                        <input type="text" placeholder="Dr. Alexander Sterling" class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">Official Email</label>
-                        <input type="email" placeholder="registrar@institution.edu" class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400">
-                    </div>
-                </div>
+            <form action="{{ route('applications.store') }}" method="POST" class="space-y-6">
+    @csrf
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">Institution Name</label>
-                        <input type="text" placeholder="Global Institute of Tech" class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">Contact Number</label>
-                        <input type="text" placeholder="+1 (613) 555-0199" class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400">
-                    </div>
-                </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                <div>
-                    <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">Accreditation Scope</label>
-                    <textarea rows="4" placeholder="Specify programs seeking certification..." class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400 resize-none"></textarea>
-                </div>
+        <div>
+            <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+                Registrar Name
+            </label>
+            <input
+                type="text"
+                name="contact_person"
+                placeholder="Dr. Alexander Sterling"
+                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition"
+            >
+        </div>
 
-                <button class="w-full bg-[#131722] text-white font-black py-4 flex items-center justify-center gap-3 text-[11px] tracking-widest uppercase hover:bg-black transition-colors">
-                    Submit for Review
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </button>
-            </form>
+        <div>
+            <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+                Official Email
+            </label>
+            <input
+                type="email"
+                name="email"
+                placeholder="registrar@institution.edu"
+                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition"
+            >
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div>
+            <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+                Institution Name
+            </label>
+            <input
+                type="text"
+                name="institution_name"
+                placeholder="Global Institute of Tech"
+                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition"
+            >
+        </div>
+
+        <div>
+            <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+                Contact Number
+            </label>
+            <input
+                type="text"
+                name="phone"
+                placeholder="+1 (613) 555-0199"
+                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition"
+            >
+        </div>
+
+    </div>
+
+    <div>
+        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+            Category
+        </label>
+
+        <select
+            name="category"
+            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition"
+        >
+            <option value="">Select Category</option>
+            <option value="university">University</option>
+            <option value="college">College</option>
+            <option value="tveta">TVET</option>
+            <option value="training_center">Training Center</option>
+        </select>
+    </div>
+
+    <!-- ✅ DESCRIPTION ADDED (MISSING BEFORE) -->
+    <div>
+        <label class="block text-[10px] font-black text-[#1a1e26] tracking-widest uppercase mb-2">
+            Institution Overview
+        </label>
+
+        <textarea
+            name="description"
+            rows="4"
+            placeholder="Brief description of your institution, programs, and accreditation goals..."
+            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#cc5a4e] focus:ring-1 focus:ring-[#cc5a4e]/30 transition resize-none"
+        ></textarea>
+    </div>
+
+    <button
+        type="submit"
+        class="w-full bg-[#131722] text-white font-black py-4 flex items-center justify-center gap-3 text-[11px] tracking-widest uppercase hover:bg-black transition-colors"
+    >
+        Submit for Review
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+    </button>
+
+</form>
         </div>
 
     </div>

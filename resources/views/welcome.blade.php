@@ -34,10 +34,10 @@
             </p>
 
             <div class="flex gap-4">
-                <a href="#" class="bg-[#0b0f19] text-white px-8 py-5 font-bold shadow-lg">
+                <a href="{{ route('apply') }}" class="bg-[#0b0f19] text-white px-8 py-5 font-bold shadow-lg">
                     START ASSESSMENT →
                 </a>
-                <a href="#" class="border border-black text-black px-8 py-5 font-bold">
+                <a href="{{ route('the-gestaac-standard') }}" class="border border-black text-black px-8 py-5 font-bold">
                     VIEW STANDARDS
                 </a>
             </div>
@@ -82,7 +82,7 @@
                     <li>• Global Recognition</li>
                 </ul>
 
-                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                <a href="{{ route('the-gestaac-standard') }}" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
                     View Standards →
                 </a>
             </div>
@@ -107,7 +107,7 @@
                     <li>• Practical Assessment</li>
                 </ul>
 
-                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                <a href="{{ route('the-gestaac-standard') }}" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
                     View Standards →
                 </a>
             </div>
@@ -158,7 +158,7 @@
                     <li>• Remote Standards</li>
                 </ul>
 
-                <a href="#" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
+                <a href="{{ route('the-gestaac-standard') }}" class="inline-block mt-6 text-sm font-bold text-[#0f172a] group-hover:text-blue-600 transition">
                     View Standards →
                 </a>
             </div>
@@ -284,11 +284,11 @@
                 Download Standards
             </a>
 
-            <a href="#" class="bg-[#b35a4f] px-10 py-4 font-bold">
+            <a href="{{ route('apply') }}" class="bg-[#b35a4f] px-10 py-4 font-bold">
                 Begin Application
             </a>
 
-            <a href="#" class="text-sm uppercase opacity-50 font-bold">
+            <a href="{{ route('apply') }}" class="text-sm uppercase opacity-50 font-bold">
                 Contact Authority
             </a>
         </div>

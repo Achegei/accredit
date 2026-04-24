@@ -22,19 +22,34 @@
             <div class="relative p-[1px] bg-gradient-to-br from-red-500/20 via-transparent to-red-500/20 rounded-sm">
                 <div class="bg-[#0f1218] border border-gray-800/50 p-10 shadow-2xl">
                     
-                    <div class="flex flex-col md:flex-row gap-0 border-b border-gray-700/50 pb-2 mb-8">
-                        <div class="flex items-center flex-grow py-4 px-2">
-                            <svg class="w-6 h-6 text-gray-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            </svg>
-                            <input type="text"
-                                   placeholder="Enter Certificate ID, Institution Name, or License Number..."
-                                   class="bg-transparent border-none focus:ring-0 text-gray-200 w-full placeholder-gray-600 text-lg">
-                        </div>
-                        <button class="bg-white text-[#0a0c10] font-black px-12 py-5 text-xs tracking-widest hover:bg-gray-200 transition uppercase">
-                            Scan / Verify
-                        </button>
-                    </div>
+                <form onsubmit="event.preventDefault(); goVerify();"
+      class="flex flex-col md:flex-row gap-0 border-b border-gray-700/50 pb-2 mb-8">
+
+    <!-- INPUT -->
+    <div class="flex items-center flex-grow py-4 px-2">
+
+        <svg class="w-6 h-6 text-gray-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+
+        <input
+            id="verifyInput"
+            type="text"
+            placeholder="Enter Certificate ID, Institution Name, or Course..."
+            class="bg-transparent border-none focus:ring-0 text-gray-200 w-full placeholder-gray-600 text-lg"
+            required
+        >
+
+    </div>
+
+    <!-- BUTTON -->
+    <button type="submit"
+        class="bg-white text-[#0a0c10] font-black px-12 py-5 text-xs tracking-widest hover:bg-gray-200 transition uppercase">
+        Scan / Verify
+    </button>
+
+</form>
 
                     <div class="flex flex-wrap items-center gap-6 text-[10px] tracking-[0.15em] uppercase font-bold">
                         <span class="text-gray-500">Registry Category</span>
@@ -130,4 +145,15 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
     body { font-family: 'Inter', sans-serif; }
 </style>
+<script>
+function goVerify() {
+
+    let query = document.getElementById('verifyInput').value.trim();
+
+    if (!query) return;
+
+    window.location.href = `/verify/search?query=${encodeURIComponent(query)}`;
+}
+</script>
+
 @endsection
