@@ -26,6 +26,7 @@
                 class="w-full bg-white text-black font-bold py-3">
             Scan / Verify
         </button>
+        <p>if you have any questions, please contact us. info@gestaac.ca</p>
 
     </form>
 

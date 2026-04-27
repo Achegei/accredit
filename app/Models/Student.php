@@ -6,13 +6,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    public function certificates()
-{
-    return $this->hasMany(Certificate::class);
-}
+    protected $fillable = [
+        'institution_id',
+        'full_name',
+        'email',
+        'phone',
+        'id_number',
+        'date_of_birth',
+        'gender',
+        'nationality',
+        'registration_number',
+        'enrollment_date',
+        'status',
+    ];
 
-public function institution()
-{
-    return $this->belongsTo(Institution::class);
-}
+    protected $casts = [
+        'date_of_birth' => 'date',
+        'enrollment_date' => 'date',
+    ];
+
+    // ================= RELATIONSHIPS =================
+
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class);
+    }
+
+    public function institution()
+    {
+        return $this->belongsTo(Institution::class);
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Application;
 use App\Services\ApplicationService;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ApplicationController extends Controller
 {
@@ -50,4 +51,5 @@ public function reject(Request $request, $id)
 
     return redirect()->back()->with('success', 'Application rejected');
 }
+
 }

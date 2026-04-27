@@ -6,10 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Certificate extends Model
 {
+    protected $fillable = [
+        'student_id',
+        'course_id',
+        'certificate_number',
+        'issue_date',
+        'grade',
+        'status',
+    ];
+
     public function student()
-{
-    return $this->belongsTo(Student::class);
-}
+    {
+        return $this->belongsTo(Student::class);
+    }
 
     public function course()
     {

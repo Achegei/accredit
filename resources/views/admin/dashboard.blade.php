@@ -92,6 +92,15 @@
                 View Partners
             </a>
 
+            <a href="{{ route('admin.certificates.index') }}" 
+            class="block bg-white/10 px-4 py-3 rounded-lg hover:bg-white/20 transition">📜 Certificates
+            </a>
+
+            <a href="{{ route('admin.certificates.requests') }}"
+                class="block bg-white/10 px-4 py-3 rounded-lg hover:bg-white/20 transition">
+                    📩 Certificate Requests
+                </a>
+
         </div>
     </div>
 

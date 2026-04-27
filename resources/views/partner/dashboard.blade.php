@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('partner.layouts.app')
 
 @section('content')
 
@@ -19,14 +19,14 @@
             </div>
 
             <div class="flex gap-3">
-                <a href="#"
+                <a href="{{ route('partner.students') }}"
                    class="px-5 py-3 bg-[#0f172a] text-white font-bold text-xs uppercase rounded-md hover:bg-black transition">
                     + Add Student
                 </a>
 
-                <a href="#"
+                <a href="{{route('partner.certificates.store')}}"
                    class="px-5 py-3 border border-gray-300 text-[#0f172a] font-bold text-xs uppercase rounded-md hover:bg-white transition">
-                    Issue Certificate
+                    Request Certificate
                 </a>
             </div>
 

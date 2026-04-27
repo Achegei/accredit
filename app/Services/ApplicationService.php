@@ -30,37 +30,58 @@ class ApplicationService
     }
 
     /**
-     * Approve application → create institution + user
+     * Approve application → create institution + user + ownership link
      */
     public function approve(Application $application): array
     {
-        // 1. Create Institution
+        // 🔒 Prevent double approval
+        if ($application->status === 'approved') {
+            return [
+                'institution' => $application->institution,
+                'user' => User::where('email', $application->email)->first()
+            ];
+        }
+
+        // 1. Create Institution (linked to application)
         $institution = Institution::create([
             'name' => $application->institution_name,
             'email' => $application->email,
             'phone' => $application->phone,
             'status' => 'approved',
+            'application_id' => $application->id,
         ]);
 
-        // 2. Generate Password
+        // 2. Generate secure password
         $password = Str::random(10);
 
-        // 3. Create User (Partner)
-        $user = User::create([
-            'name' => $application->contact_person,
-            'email' => $application->email,
-            'password' => Hash::make($password),
-            'role' => 'partner',
+        // 3. Create or update partner user
+        $user = User::updateOrCreate(
+            ['email' => $application->email],
+            [
+                'name' => $application->contact_person,
+                'password' => Hash::make($password),
+                'role' => 'partner',
+            ]
+        );
+
+        // 4. 🔥 FULL OWNERSHIP LINK (CRITICAL FIX)
+        $user->update([
             'institution_id' => $institution->id,
         ]);
 
-        // 4. Update Application Status
+        $institution->update([
+            'owner_user_id' => $user->id, // requires migration (recommended)
+        ]);
+
+        // 5. Mark application approved
         $application->update([
             'status' => 'approved'
         ]);
 
-        // 5. Send Email (basic for now)
-        Mail::to($user->email)->send(new PartnerApprovedMail($user, $password));
+        // 6. Send approval email
+        Mail::to($user->email)->send(
+            new PartnerApprovedMail($user, $password)
+        );
 
         return [
             'institution' => $institution,
@@ -68,14 +89,17 @@ class ApplicationService
         ];
     }
 
+    /**
+     * Reject application
+     */
     public function reject(Application $application, ?string $notes = null): void
-{
-    $application->update([
-        'status' => 'rejected',
-        'notes' => $notes
-    ]);
+    {
+        $application->update([
+            'status' => 'rejected',
+            'notes' => $notes
+        ]);
 
-    Mail::to($application->email)
-        ->send(new ApplicationRejectedMail($application));
-}
+        Mail::to($application->email)
+            ->send(new ApplicationRejectedMail($application));
+    }
 }

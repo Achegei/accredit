@@ -2,26 +2,36 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Institution;
 
-#[Fillable(['name', 'email', 'password'])]
-#[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * Mass assignable attributes
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role',
+        'institution_id', // ✅ IMPORTANT (your missing piece)
+    ];
+
+    /**
+     * Hidden attributes
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Attribute casting
      */
     protected function casts(): array
     {
@@ -31,8 +41,27 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Relationship: Partner belongs to an Institution
+     */
     public function institution()
     {
         return $this->belongsTo(Institution::class);
+    }
+
+    /**
+     * Helper: check if user is admin
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Helper: check if user is partner
+     */
+    public function isPartner(): bool
+    {
+        return $this->role === 'partner';
     }
 }

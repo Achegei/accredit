@@ -10,30 +10,41 @@ class CourseController extends Controller
 {
     public function index()
     {
-        return Course::where('institution_id', auth()->user()->institution_id)
+        $user = auth()->user();
+
+        if (!$user || !$user->institution_id) {
+            abort(403, 'Unauthorized');
+        }
+
+        $courses = Course::where('institution_id', $user->institution_id)
             ->latest()
             ->get();
+
+        return view('partner.courses.index', compact('courses'));
     }
 
     public function store(Request $request)
     {
+        $user = auth()->user();
+
+        if (!$user || !$user->institution_id) {
+            abort(403, 'Unauthorized');
+        }
+
         $request->validate([
-            'name' => 'required|string',
-            'code' => 'nullable|string',
-            'duration' => 'nullable|string',
+            'name' => 'required|string|max:255',
+            'code' => 'nullable|string|max:50',
+            'duration' => 'nullable|string|max:50',
         ]);
 
-        $course = Course::create([
-            'institution_id' => auth()->user()->institution_id,
+        Course::create([
+            'institution_id' => $user->institution_id,
             'name' => $request->name,
             'code' => $request->code,
             'duration' => $request->duration,
             'accreditation_status' => 'approved',
         ]);
 
-        return response()->json([
-            'message' => 'Course created',
-            'data' => $course
-        ]);
+        return back()->with('success', 'Course created successfully');
     }
 }

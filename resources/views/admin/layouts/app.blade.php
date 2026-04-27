@@ -48,6 +48,16 @@
                     👥 Partners
                 </a>
 
+            <a href="/admin/certificates"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition">
+                🎓 Certificates
+            </a>
+
+            <a href="{{ route('admin.certificates.requests') }}"
+                class="block bg-white/10 px-4 py-3 rounded-lg hover:bg-white/20 transition">
+                    📩 Certificate Requests
+                </a>
+
             </nav>
         </div>
 

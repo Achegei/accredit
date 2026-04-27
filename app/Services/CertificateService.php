@@ -24,7 +24,7 @@ class CertificateService
                 'certificate_number' => $certificateNumber,
                 'issue_date' => now(),
                 'grade' => $data['grade'] ?? null,
-                'status' => 'valid',
+                'status' => 'issued',
             ]);
         });
     }

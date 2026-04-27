@@ -12,10 +12,17 @@ export default defineConfig({
     ],
 
     server: {
-        host: true, // 👈 important for proper HMR
+        host: '127.0.0.1',   // 🔥 FORCE IPv4 (fixes your issue)
+        port: 5173,
+        strictPort: true,
+
+        hmr: {
+            host: '127.0.0.1', // 🔥 CRITICAL (fix websocket)
+        },
+
         watch: {
-            usePolling: true, // 👈 THIS is the real fix
-            interval: 100,    // optional (makes it more responsive)
+            usePolling: true,
+            interval: 100,
         },
     },
 });
