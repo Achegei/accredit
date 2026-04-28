@@ -3,15 +3,24 @@
 @section('content')
 
 <!-- HERO TITLE -->
-<section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto text-center px-6">
-        <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-4">
-            ACCREDITATION PATHWAYS
-        </h1>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-            Explore the comprehensive journey toward becoming a GESTAAC-certified institution, ensuring your educational standards meet global benchmarks.
-        </p>
+<section class="py-12 md:py-16 bg-white">
+
+    <div class="max-w-5xl mx-auto px-6 flex justify-start">
+
+        <div class="text-left max-w-2xl">
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4">
+                ACCREDITATION PATHWAYS
+            </h1>
+
+            <p class="text-gray-500 text-base md:text-lg">
+                Explore the comprehensive journey toward becoming a GESTAAC-certified institution, ensuring your educational standards meet global benchmarks.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
 <!-- TIMELINE -->

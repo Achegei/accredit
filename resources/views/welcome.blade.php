@@ -6,7 +6,7 @@
 <section class="relative bg-white min-h-[80vh] flex items-center overflow-hidden">
     
     <!-- Globe -->
-    <div class="absolute top-0 right-0 w-[60%] h-full bg-cover bg-right z-[1]"
+   <div class="relative z-10 max-w-6xl mx-auto px-6 -translate-x-6 md:translate-x-0"
          style="background-image: url('/images/globe.png');">
         
         <!-- Fade -->
