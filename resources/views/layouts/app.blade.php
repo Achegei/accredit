@@ -14,7 +14,15 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
+<script>
+    let mobileOpen = false;
 
+    function toggleMobileMenu() {
+        mobileOpen = !mobileOpen;
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+</script>
 <body class="bg-white text-slate-800 overflow-x-hidden">
 
 <!-- NAVBAR -->
@@ -27,52 +35,83 @@
             GESTAAC
         </a>
 
-        <!-- LINKS -->
+        <!-- DESKTOP LINKS -->
         <ul class="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-wide">
 
-            <li><a href="/accreditation-pathways" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition">Accreditation Pathways</a></li>
+            <li><a href="/accreditation-pathways" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Accreditation</a></li>
 
-            <li><a href="/the-gestaac-standard" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition">The GESTAAC Standard</a></li>
+            <li><a href="/the-gestaac-standard" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Standard</a></li>
 
-            <li><a href="/global-registry" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition">Global Registry</a></li>
+            <li><a href="/global-registry" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Registry</a></li>
 
-            <li><a href="/contact-authority" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition">Contact Authority</a></li>
+            <li><a href="/contact-authority" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Contact</a></li>
 
         </ul>
 
-        <!-- RIGHT ACTIONS -->
-        <div class="flex items-center gap-4">
+        <!-- RIGHT ACTIONS (DESKTOP ONLY) -->
+        <div class="hidden lg:flex items-center gap-4">
 
             @auth
-                <!-- AUTHENTICATED USER -->
-
                 <a href="{{ auth()->user()->role === 'admin' ? '/admin/dashboard' : '/partner/dashboard' }}"
-                   class="text-xs font-bold uppercase text-gray-600 hover:text-black transition">
+                   class="text-xs font-bold uppercase text-gray-600 hover:text-black">
                     Dashboard
                 </a>
 
                 <form method="POST" action="/logout">
                     @csrf
-                    <button type="submit"
-                        class="text-xs font-bold uppercase text-red-500 hover:text-red-700 transition">
+                    <button class="text-xs font-bold uppercase text-red-500">
                         Logout
                     </button>
                 </form>
 
             @else
-
-                <!-- GUEST USER -->
-
-                <a href="/login"
-                   class="text-xs font-bold uppercase text-gray-500 hover:text-orange-500 transition">
-                    Member Login
+                <a href="/login" class="text-xs font-bold uppercase text-gray-500 hover:text-orange-500">
+                    Login
                 </a>
 
                 <a href="/apply"
-                   class="bg-slate-900 hover:bg-[#b35a4f] text-white text-xs font-bold uppercase px-5 py-3 transition">
-                    Apply Now
+                   class="bg-slate-900 text-white text-xs font-bold uppercase px-5 py-3">
+                    Apply
+                </a>
+            @endauth
+
+        </div>
+
+        <!-- MOBILE BUTTON -->
+        <button class="lg:hidden flex flex-col gap-1" onclick="toggleMobileMenu()">
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+        </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t bg-white">
+
+        <div class="px-6 py-4 flex flex-col gap-4 text-sm font-semibold uppercase">
+
+            <a href="/accreditation-pathways">Accreditation Pathways</a>
+            <a href="/the-gestaac-standard">The Standard</a>
+            <a href="/global-registry">Registry</a>
+            <a href="/contact-authority">Contact</a>
+
+            <hr>
+
+            @auth
+                <a href="{{ auth()->user()->role === 'admin' ? '/admin/dashboard' : '/partner/dashboard' }}">
+                    Dashboard
                 </a>
 
+                <form method="POST" action="/logout">
+                    @csrf
+                    <button class="text-red-500 text-left">
+                        Logout
+                    </button>
+                </form>
+            @else
+                <a href="/login">Login</a>
+                <a href="/apply" class="text-blue-600">Apply Now</a>
             @endauth
 
         </div>
