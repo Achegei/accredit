@@ -4,13 +4,13 @@
 
 
 <section class="relative bg-white min-h-[80vh] flex items-center overflow-hidden">
-    
+
     <!-- Globe -->
-   <div class="relative z-10 max-w-6xl mx-auto px-6 -translate-x-6 md:translate-x-0"
+    <div class="absolute top-0 right-0 w-[60%] h-full bg-cover bg-right z-[1]"
          style="background-image: url('/images/globe.png');">
-        
-        <!-- Fade -->
-        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-[2]"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+
     </div>
 
     <!-- Watermark -->
@@ -18,18 +18,23 @@
         GESTAAC
     </div>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-6xl mx-auto px-6">
-        <div class="max-w-[700px]">
-            
-            <h1 class="text-[5.5rem] font-black leading-[0.85] tracking-[-4px] text-[#0b0f19] mb-8">
-                ELEVATING<br>GLOBAL<br>
+    <!-- Content (THIS is what we shift) -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 flex justify-start">
+
+        <div class="max-w-[700px] text-left -translate-x-2 md:translate-x-0">
+
+            <h1 class="text-4xl sm:text-5xl md:text-[5.5rem] font-black leading-[0.9] tracking-tight md:tracking-[-4px] text-[#0b0f19] mb-8">
+
+                ELEVATING<br>
+                GLOBAL<br>
+
                 <span class="bg-gradient-to-b from-[#101828] to-[#2563eb] bg-clip-text text-transparent">
                     EDUCATIONAL STANDARDS
                 </span>
+
             </h1>
 
-            <p class="text-gray-500 mb-10 max-w-[500px] text-lg">
+            <p class="text-gray-500 mb-10 max-w-[500px] text-base md:text-lg">
                 The Global Education, Skills & Training Accreditation Authority Canada (GESTAAC) provides world-class quality assurance and certification for elite institutions.
             </p>
 
@@ -37,13 +42,16 @@
                 <a href="{{ route('apply') }}" class="bg-[#0b0f19] text-white px-8 py-5 font-bold shadow-lg">
                     START ASSESSMENT →
                 </a>
+
                 <a href="{{ route('the-gestaac-standard') }}" class="border border-black text-black px-8 py-5 font-bold">
                     VIEW STANDARDS
                 </a>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 <section class="py-20 bg-white">
