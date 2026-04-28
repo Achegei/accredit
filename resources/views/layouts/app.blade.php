@@ -24,7 +24,7 @@
 
         <!-- LOGO -->
         <a href="/" class="text-2xl font-black tracking-[-1px] text-black">
-            GES&TAAC
+            GESTAAC
         </a>
 
         <!-- LINKS -->

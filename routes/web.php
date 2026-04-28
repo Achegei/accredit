@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Admin\AdminInstitutionController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
+use App\Http\Controllers\SitemapController;
 /*
 |--------------------------------------------------------------------------
 | 🌐 PUBLIC PAGES
@@ -22,6 +23,10 @@ Route::get('/global-registry', [PagesController::class, 'globalRegistry']);
 Route::get('/contact-authority', [PagesController::class, 'contactAuthority']);
 Route::get('/apply', [PagesController::class, 'apply'])->name('apply');
 Route::post('/applications', [PublicApplicationController::class, 'store'])->name('applications.store');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/sitemap', [SitemapController::class, 'index']); // backup route
 
 
 /*
