@@ -3,45 +3,35 @@
 @section('content')
 
 <!-- HERO SECTION -->
-<section class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="relative py-20 md:py-28 bg-white overflow-hidden">
 
-        <div class="flex flex-col lg:flex-row items-center gap-16">
+    <!-- Subtle gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-pink-50 opacity-70"></div>
 
-            <!-- LEFT: SEAL -->
-            <div class="lg:w-1/3 flex justify-center lg:justify-end">
-                <div class="w-[280px] h-[280px]">
-                    <svg viewBox="0 0 100 100" class="w-full h-full">
-                        <circle cx="50" cy="50" r="49" stroke="#e2e8f0" stroke-width="0.5"/>
-                        <circle cx="50" cy="50" r="40" stroke="#05070a" stroke-width="0.5" stroke-dasharray="4 2"/>
-                        <path d="M50 25L35 70H42L50 45L58 70H65L50 25Z" fill="#05070a"/>
-                        <path d="M43 58H57" stroke="#05070a" stroke-width="2"/>
-                    </svg>
-                </div>
-            </div>
+    <!-- Soft glow accents -->
+    <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-[-120px] right-0 w-[400px] h-[400px] bg-pink-200/30 blur-3xl rounded-full"></div>
 
-            <!-- RIGHT: TEXT -->
-            <div class="flex-1 text-center lg:text-left">
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
-                <span class="text-xs font-extrabold tracking-[3px] text-pink-600 uppercase mb-4 block">
-                    THE GLOBAL QUALITY PROTOCOL
-                </span>
+        <span class="text-xs font-extrabold tracking-[3px] text-pink-600 uppercase mb-4 block">
+            THE GLOBAL QUALITY PROTOCOL
+        </span>
 
-                <h1 class="text-5xl lg:text-7xl font-black leading-[0.9] tracking-[-4px] text-[#05070a] mb-6">
-                    THE GESTAAC<br>
-                    <span class="bg-gradient-to-r from-blue-500 to-pink-600 bg-clip-text text-transparent">
-                        STANDARD
-                    </span>
-                </h1>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight md:leading-[0.95] tracking-tight md:tracking-[-2px] text-[#05070a] mb-6">
+            THE GESTAAC<br>
+            <span class="bg-gradient-to-r from-blue-500 to-pink-600 bg-clip-text text-transparent">
+                STANDARD
+            </span>
+        </h1>
 
-                <p class="text-lg text-slate-500 max-w-xl leading-relaxed">
-                    A rigorous, multidimensional evaluation framework designed to ensure institutional excellence, academic integrity, and global professional portability.
-                </p>
+        <p class="text-base md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            A rigorous, multidimensional evaluation framework designed to ensure institutional excellence, academic integrity, and global professional portability.
+        </p>
 
-            </div>
-
-        </div>
     </div>
+
 </section>
 
 <!-- FRAMEWORK SECTION -->
@@ -139,26 +129,42 @@
             <!-- RIGHT -->
             <div class="lg:col-span-2 space-y-4">
 
-                <!-- FAQ ITEM -->
-                @foreach([
-                    'What is the GESTAAC accreditation process?',
-                    'Is GESTAAC recognized internationally?',
-                    'How long does accreditation last?',
-                    'Can individuals apply?',
-                    'What are the fees?'
-                ] as $q)
+                @php
+                $faqs = [
+                    [
+                        'q' => 'What is the GESTAAC accreditation process?',
+                        'a' => 'The GESTAAC accreditation process follows a structured, multi-phase approach. It begins with application submission, followed by a self-assessment audit aligned with the GESTAAC framework. This is then reviewed through expert evaluation and, where applicable, peer review or site inspection. Successful institutions are granted accreditation and listed in the global registry, with ongoing monitoring to ensure continued compliance.'
+                    ],
+                    [
+                        'q' => 'Is GESTAAC recognized internationally?',
+                        'a' => 'GESTAAC operates within an international framework of quality assurance principles and collaborates with global partners to ensure its standards align with recognized best practices. Its accreditation model is designed to support cross-border recognition, institutional credibility, and global education mobility.'
+                    ],
+                    [
+                        'q' => 'How long does accreditation last?',
+                        'a' => 'GESTAAC accreditation is typically granted for a defined multi-year period, during which institutions must maintain compliance with established standards. Periodic reviews and monitoring ensure continued quality, with renewal required upon expiration.'
+                    ],
+                    [
+                        'q' => 'Can individuals apply?',
+                        'a' => 'GESTAAC accreditation is primarily designed for institutions, training providers, and organizations. However, individuals may engage through affiliated institutions or participate in certified programs that align with the GESTAAC framework.'
+                    ],
+                    [
+                        'q' => 'What are the fees?',
+                        'a' => 'GESTAAC accreditation fees vary depending on the type of institution, scope of evaluation, and level of accreditation sought. Fees are structured to reflect the depth of assessment and ongoing quality assurance processes. Institutions receive a detailed quotation upon inquiry, tailored to their specific profile and requirements.'
+                    ],
+                ];
+                @endphp
 
+                @foreach($faqs as $faq)
                 <details class="border-b border-slate-200 py-6 group">
-                    <summary class="cursor-pointer font-semibold text-lg flex justify-between">
-                        {{ $q }}
+                    <summary class="cursor-pointer font-semibold text-lg flex justify-between items-center">
+                        {{ $faq['q'] }}
                         <span class="group-open:rotate-180 transition">⌄</span>
                     </summary>
 
                     <p class="text-slate-500 mt-4 text-sm leading-relaxed">
-                        This is part of the structured GESTAAC evaluation framework ensuring global compliance and institutional excellence.
+                        {{ $faq['a'] }}
                     </p>
                 </details>
-
                 @endforeach
 
             </div>

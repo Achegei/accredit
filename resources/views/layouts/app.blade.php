@@ -166,8 +166,8 @@
         <!-- CONTACT -->
         <div>
             <h6 class="text-white font-bold mb-4">Canadian Headquarters</h6>
-            <p class="text-sm">📍 123 Main St, Springfield, Canada</p>
-            <p class="text-sm">📞 +1 555-123-4567</p>
+            <p class="text-sm">📍 89 Galaxy Blvd, Toronto, ON M9W 6A4, Canada</p>
+            <p class="text-sm">📞 +1 780-800-1824</p>
             <p class="text-sm mb-4">✉️ info@gestaac.ca</p>
 
             <div class="flex gap-4 text-white opacity-70 text-lg">

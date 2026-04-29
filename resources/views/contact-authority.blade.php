@@ -26,8 +26,8 @@
         </div>
         <div>
           <h3 class="text-xs font-bold text-gray-300 uppercase tracking-widest mb-1">Location</h3>
-          <p class="text-gray-400 text-sm">150 Elgin Street, Suite 800</p>
-          <p class="text-gray-400 text-sm">Ottawa, ON K2P 1L4, Canada</p>
+          <p class="text-gray-400 text-sm">89 Galaxy Blvd</p>
+          <p class="text-gray-400 text-sm">Toronto, ON M9W 6A4, Canada</p>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
         </div>
         <div>
           <h3 class="text-xs font-bold text-gray-300 uppercase tracking-widest mb-1">Direct Line</h3>
-          <p class="text-gray-400 text-sm">+1 (613) 555–0199</p>
+          <p class="text-gray-400 text-sm">+1 (780) 800–1824</p>
         </div>
       </div>
 
@@ -53,7 +53,7 @@
         </div>
         <div>
           <h3 class="text-xs font-bold text-gray-300 uppercase tracking-widest mb-1">Registry Inquiry</h3>
-          <p class="text-gray-400 text-sm">authority@gestaac.org</p>
+          <p class="text-gray-400 text-sm">info@gestaac.ca</p>
         </div>
       </div>
 
@@ -66,8 +66,9 @@
         </div>
         <div>
           <h3 class="text-xs font-bold text-gray-300 uppercase tracking-widest mb-1">Operational Hours</h3>
-          <p class="text-gray-400 text-sm">Monday - Friday: 09:00 - 17:00 EST</p>
-          <p class="text-gray-400 text-sm">Saturday - Sunday: Closed</p>
+          <p class="text-gray-400 text-sm">Monday - Friday: 09:00 AM - 17:00 PM EST</p>
+          <p class="text-gray-400 text-sm">Saturday : 10:00 AM - 14:00 PM EST</p>
+          <p class="text-gray-400 text-sm">Sunday  : Closed</p>
           <p class="text-gray-400 text-xs mt-1 text-gray-500 italic">Registry Access: 24/7 Digital</p>
         </div>
       </div>
