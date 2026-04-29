@@ -79,7 +79,7 @@
       <svg class="w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
       </svg>
-      Locate Authority
+      Contact Authority
     </button>
 
   </div>
@@ -112,7 +112,7 @@
                     </div>
                     <div>
                         <span class="block text-[9px] font-black text-gray-400 tracking-widest uppercase">Official Correspondence</span>
-                        <span class="text-md font-bold text-gray-900">accreditation@gestaac.ca</span>
+                        <span class="text-md font-bold text-gray-900">info@gestaac.ca</span>
                     </div>
                 </div>
 
@@ -124,7 +124,7 @@
                     </div>
                     <div>
                         <span class="block text-[9px] font-black text-gray-400 tracking-widest uppercase">Authority Hotline</span>
-                        <span class="text-md font-bold text-gray-900">+1 (613) 555-0199</span>
+                        <span class="text-md font-bold text-gray-900">+1 780-800-1824</span>
                     </div>
                 </div>
             </div>

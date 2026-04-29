@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminInstitutionController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\RegistryController;
 /*
 |--------------------------------------------------------------------------
 | 🌐 PUBLIC PAGES
@@ -23,6 +24,9 @@ Route::get('/global-registry', [PagesController::class, 'globalRegistry']);
 Route::get('/contact-authority', [PagesController::class, 'contactAuthority']);
 Route::get('/apply', [PagesController::class, 'apply'])->name('apply');
 Route::post('/applications', [PublicApplicationController::class, 'store'])->name('applications.store');
+Route::get('/terms', [PagesController::class, 'termsOfService'])->name('terms');
+Route::get('/privacy', [PagesController::class, 'privacyPolicy'])->name('privacy');
+Route::get('/registry/{slug}', [RegistryController::class, 'show']);
 
 // Sitemap
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

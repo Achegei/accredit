@@ -132,7 +132,7 @@
 
         <!-- BRAND -->
         <div>
-            <div class="text-white text-xl font-black mb-4">GES&TAAC</div>
+            <div class="text-white text-xl font-black mb-4">GESTAAC</div>
             <p class="max-w-sm text-sm leading-relaxed">
                 Assess, approve, certify, and monitor institutions and training programs across global education and skills sectors.
             </p>
@@ -156,10 +156,18 @@
         <div>
             <h6 class="text-white font-bold mb-4">Quick Links</h6>
             <ul class="space-y-2 text-sm">
-                <li>Accreditation Pathways</li>
-                <li>The GESTAAC Standard</li>
-                <li>Global Registry</li>
-                <li>Contact Authority</li>
+                <a href="/accreditation-pathways">
+                    <li>Accreditation Pathways</li>
+                </a>
+                <a href="/the-gestaac-standard">
+                    <li>The GESTAAC Standard</li>
+                </a>
+                <a href="/global-registry">
+                    <li>Global Registry</li>
+                </a>
+                <a href="/contact-authority">
+                    <li>Contact Authority</li>
+                </a>
             </ul>
         </div>
 
@@ -189,8 +197,8 @@
             </p>
 
             <div class="flex gap-6">
-                <a href="#" class="hover:text-white">Privacy Policy</a>
-                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="{{ route('privacy') }}" class="hover:text-white">Privacy Policy</a>
+                <a href="{{ route('terms') }}" class="hover:text-white">Terms of Service</a>
             </div>
 
         </div>

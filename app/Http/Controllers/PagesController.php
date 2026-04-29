@@ -35,4 +35,13 @@ class PagesController extends Controller
     {
         return view('apply');
     }
+public function termsOfService()
+{
+    return view('legal.terms');
+}
+
+public function privacyPolicy()
+{
+    return view('legal.privacy');
+}
 }

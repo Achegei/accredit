@@ -67,78 +67,109 @@
     </section>
 
     {{-- LIGHT SECTION --}}
-    <section class="bg-[#f7f5f2] py-24 px-6 text-slate-900">
-        <div class="max-w-7xl mx-auto">
+<section class="bg-[#f7f5f2] py-24 px-6 text-slate-900">
+    <div class="max-w-7xl mx-auto">
 
-            <h2 class="text-6xl font-black mb-6 leading-none tracking-tight">
-                GLOBAL <span class="text-[#d35f55]">REGISTRY</span>
-            </h2>
+        <h2 class="text-6xl font-black mb-6 leading-none tracking-tight">
+            GLOBAL <span class="text-[#d35f55]">REGISTRY</span>
+        </h2>
 
-            <p class="text-slate-600 text-lg max-w-3xl mb-16 leading-relaxed">
-                Access the official GESTAAC registry. Verify institutions, programs, and professionals committed to global excellence and compliance.
-            </p>
+        <p class="text-slate-600 text-lg max-w-3xl mb-16 leading-relaxed">
+            Access the official GESTAAC registry. Verify institutions, programs, and professionals committed to global excellence and compliance.
+        </p>
 
-            @php
-                $records = [
-                    ['title' => 'Navigating Multi Country Accreditation', 'year' => '2024', 'image' => 'registry-1.webp'],
-                    ['title' => 'Trainer Accreditation Elevates Professional Growth', 'year' => '2024', 'image' => 'registry-2.webp'],
-                    ['title' => 'Corporate Training Accreditation Enhances ROI', 'year' => '2024', 'image' => 'registry-3.webp'],
-                    ['title' => 'Accreditation for Online Learning Platforms', 'year' => '2024', 'image' => 'registry-4.webp'],
-                    ['title' => 'Guide to Skills & TVET Accreditation', 'year' => '2024', 'image' => 'registry-5.webp'],
-                    ['title' => 'Why International Accreditation Matters', 'year' => '2024', 'image' => 'registry-6.webp'],
-                ];
-            @endphp
+        @php
+            $records = [
+                [
+                    'title' => 'Navigating Multi Country Accreditation',
+                    'year' => '2024',
+                    'image' => 'registry-1.webp',
+                    'slug'  => 'multi-country-accreditation'
+                ],
+                [
+                    'title' => 'Trainer Accreditation Elevates Professional Growth',
+                    'year' => '2024',
+                    'image' => 'registry-2.webp',
+                    'slug'  => 'trainer-accreditation'
+                ],
+                [
+                    'title' => 'Corporate Training Accreditation Enhances ROI',
+                    'year' => '2024',
+                    'image' => 'registry-3.webp',
+                    'slug'  => 'corporate-training-accreditation'
+                ],
+                [
+                    'title' => 'Accreditation for Online Learning Platforms',
+                    'year' => '2024',
+                    'image' => 'registry-4.webp',
+                    'slug'  => 'online-learning-accreditation'
+                ],
+                [
+                    'title' => 'Guide to Skills & TVET Accreditation',
+                    'year' => '2024',
+                    'image' => 'registry-5.webp',
+                    'slug'  => 'tvet-accreditation'
+                ],
+                [
+                    'title' => 'Why International Accreditation Matters',
+                    'year' => '2024',
+                    'image' => 'registry-6.webp',
+                    'slug'  => 'international-accreditation'
+                ],
+            ];
+        @endphp
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                @foreach($records as $item)
-                <div class="group bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
+            @foreach($records as $item)
 
-                    {{-- IMAGE --}}
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="{{ asset('images/'.$item['image']) }}"
-                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                             alt="{{ $item['title'] }}">
+            <a href="{{ url('/registry/'.$item['slug']) }}"
+               class="group block bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
 
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                {{-- IMAGE --}}
+                <div class="relative overflow-hidden aspect-[4/3]">
+                    <img src="{{ asset('images/'.$item['image']) }}"
+                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                         alt="{{ $item['title'] }}">
 
-                        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+
+                {{-- CONTENT --}}
+                <div class="p-6 flex flex-col flex-grow">
+
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-[10px] font-black tracking-widest text-blue-600 uppercase">
+                            Accredited
+                        </span>
+                        <span class="text-[10px] text-slate-400">
+                            {{ $item['year'] }}
+                        </span>
                     </div>
 
-                    {{-- CONTENT --}}
-                    <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold mb-3 leading-tight group-hover:text-[#d35f55] transition">
+                        {{ $item['title'] }}
+                    </h3>
 
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black tracking-widest text-blue-600 uppercase">
-                                Accredited
-                            </span>
-                            <span class="text-[10px] text-slate-400">
-                                {{ $item['year'] }}
-                            </span>
-                        </div>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                        Explore how global accreditation enhances institutional credibility and international recognition.
+                    </p>
 
-                        <h3 class="text-lg font-bold mb-3 leading-tight group-hover:text-[#d35f55] transition">
-                            {{ $item['title'] }}
-                        </h3>
-
-                        <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                            Explore how global accreditation enhances institutional credibility and international recognition.
-                        </p>
-
-                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
-                            <span class="text-xs font-bold">View Record</span>
-                            <span class="text-xs">→</span>
-                        </div>
-
+                    <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <span class="text-xs font-bold">View Record</span>
+                        <span class="text-xs">→</span>
                     </div>
 
                 </div>
-                @endforeach
 
-            </div>
+            </a>
+
+            @endforeach
+
         </div>
-    </section>
-
+    </div>
+</section>
 </div>
 
 <style>
