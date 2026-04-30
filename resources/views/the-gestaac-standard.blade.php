@@ -5,23 +5,23 @@
 <!-- HERO SECTION -->
 <section class="relative py-20 md:py-28 bg-white overflow-hidden">
 
-    <!-- Subtle gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-pink-50 opacity-70"></div>
+    <!-- Canadian gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-gray-100 opacity-70"></div>
 
     <!-- Soft glow accents -->
-    <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-200/30 blur-3xl rounded-full"></div>
-    <div class="absolute bottom-[-120px] right-0 w-[400px] h-[400px] bg-pink-200/30 blur-3xl rounded-full"></div>
+    <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-red-200/30 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-[-120px] right-0 w-[400px] h-[400px] bg-gray-300/20 blur-3xl rounded-full"></div>
 
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
-        <span class="text-xs font-extrabold tracking-[3px] text-pink-600 uppercase mb-4 block">
+        <span class="text-xs font-extrabold tracking-[3px] text-red-600 uppercase mb-4 block">
             THE GLOBAL QUALITY PROTOCOL
         </span>
 
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight md:leading-[0.95] tracking-tight md:tracking-[-2px] text-[#05070a] mb-6">
             THE GESTAAC<br>
-            <span class="bg-gradient-to-r from-blue-500 to-pink-600 bg-clip-text text-transparent">
+            <span class="bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent">
                 STANDARD
             </span>
         </h1>
@@ -41,8 +41,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- CARD 1 -->
-            <div class="bg-white border border-slate-200 p-10 hover:border-blue-500 hover:shadow-xl transition">
-                <div class="w-12 h-12 bg-slate-100 flex items-center justify-center mb-6">
+            <div class="bg-white border border-slate-200 p-10 hover:border-red-600 hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-red-50 flex items-center justify-center mb-6">
                     <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -56,8 +56,8 @@
             </div>
 
             <!-- CARD 2 -->
-            <div class="bg-white border border-slate-200 p-10 hover:border-blue-500 hover:shadow-xl transition">
-                <div class="w-12 h-12 bg-slate-100 flex items-center justify-center mb-6">
+            <div class="bg-white border border-slate-200 p-10 hover:border-red-600 hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-red-50 flex items-center justify-center mb-6">
                     <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                         d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -71,8 +71,8 @@
             </div>
 
             <!-- CARD 3 -->
-            <div class="bg-white border border-slate-200 p-10 hover:border-blue-500 hover:shadow-xl transition">
-                <div class="w-12 h-12 bg-slate-100 flex items-center justify-center mb-6">
+            <div class="bg-white border border-slate-200 p-10 hover:border-red-600 hover:shadow-xl transition">
+                <div class="w-12 h-12 bg-red-50 flex items-center justify-center mb-6">
                     <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -97,7 +97,7 @@
 
             <!-- LEFT -->
             <div>
-                <span class="text-pink-600 text-xs font-extrabold tracking-[2px] uppercase">
+                <span class="text-red-600 text-xs font-extrabold tracking-[2px] uppercase">
                     Common Inquiries
                 </span>
 
@@ -109,8 +109,8 @@
                     Detailed insights into global compliance and institutional evaluation systems.
                 </p>
 
-                <div class="bg-[#05070a] text-white p-8">
-                    <span class="text-pink-500 text-xs font-bold uppercase tracking-wider">
+                <div class="bg-[#05070a] text-white p-8 border-l-4 border-red-600">
+                    <span class="text-red-500 text-xs font-bold uppercase tracking-wider">
                         Official Registrar
                     </span>
 
@@ -120,7 +120,7 @@
                         Verification is only available via the Global Registry using institutional UID.
                     </p>
 
-                    <a href="#" class="border border-white px-5 py-2 text-xs font-bold uppercase hover:bg-white hover:text-black transition">
+                    <a href="/global-registry" class="border border-white px-5 py-2 text-xs font-bold uppercase hover:bg-red-600 hover:border-red-600 hover:text-white transition">
                         Access Registry
                     </a>
                 </div>
@@ -155,7 +155,7 @@
                 @endphp
 
                 @foreach($faqs as $faq)
-                <details class="border-b border-slate-200 py-6 group">
+                <details class="border-b border-slate-200 py-6 group hover:bg-red-50/40 px-2 transition">
                     <summary class="cursor-pointer font-semibold text-lg flex justify-between items-center">
                         {{ $faq['q'] }}
                         <span class="group-open:rotate-180 transition">⌄</span>

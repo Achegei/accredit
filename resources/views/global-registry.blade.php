@@ -1,18 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-[#0a0c10] text-white font-sans selection:bg-red-500/30">
+
+<!-- CANADIAN FEEL OVERLAY (ADDED ONLY) -->
+<style>
+    .canadian-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 60%),
+            radial-gradient(circle at bottom right, rgba(211, 95, 85, 0.06), transparent 55%);
+        z-index: 0;
+    }
+
+    .maple-watermark {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.03;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Maple_Leaf.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+        z-index: 0;
+    }
+</style>
+
+<div class="canadian-overlay"></div>
+<div class="maple-watermark"></div>
+
+<div class="min-h-screen bg-[#0a0c10] text-white font-sans selection:bg-red-500/30 relative z-10">
 
     {{-- HERO --}}
     <section class="relative pt-32 pb-24 px-6 overflow-hidden">
+
+        <!-- subtle canadian cool tint -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0c10] via-[#0d1118] to-[#0a0c10] opacity-90"></div>
+
         <div class="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none">
             <h1 class="text-[14rem] font-black tracking-tighter uppercase">Verification</h1>
         </div>
 
         <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-green-500/20 bg-green-500/10 rounded-sm text-[10px] tracking-[0.2em] text-green-400 uppercase font-bold">
-                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                Status: Registry Online
+
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-red-400/20 bg-red-500/10 rounded-sm text-[10px] tracking-[0.2em] text-red-300 uppercase font-bold">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse"></span>
+                Status: Canadian Registry Network Active
             </div>
 
             <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -21,11 +55,10 @@
 
             <div class="relative p-[1px] bg-gradient-to-br from-red-500/20 via-transparent to-red-500/20 rounded-sm">
                 <div class="bg-[#0f1218] border border-gray-800/50 p-10 shadow-2xl">
-                    
+
                 <form onsubmit="event.preventDefault(); goVerify();"
       class="flex flex-col md:flex-row gap-0 border-b border-gray-700/50 pb-2 mb-8">
 
-    <!-- INPUT -->
     <div class="flex items-center flex-grow py-4 px-2">
 
         <svg class="w-6 h-6 text-gray-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +76,6 @@
 
     </div>
 
-    <!-- BUTTON -->
     <button type="submit"
         class="bg-white text-[#0a0c10] font-black px-12 py-5 text-xs tracking-widest hover:bg-gray-200 transition uppercase">
         Scan / Verify
@@ -51,23 +83,23 @@
 
 </form>
 
-                    <div class="flex flex-wrap items-center gap-6 text-[10px] tracking-[0.15em] uppercase font-bold">
-                        <span class="text-gray-500">Registry Category</span>
-                        <div class="flex bg-[#161a22] rounded-sm p-1 gap-1">
-                            <button class="bg-[#d35f55] px-5 py-2.5 text-white">All Records</button>
-                            <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Institutions</button>
-                            <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Trainers</button>
-                            <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Programs</button>
-                        </div>
+                <div class="flex flex-wrap items-center gap-6 text-[10px] tracking-[0.15em] uppercase font-bold">
+                    <span class="text-gray-500">Registry Category</span>
+                    <div class="flex bg-[#161a22] rounded-sm p-1 gap-1">
+                        <button class="bg-[#d35f55] px-5 py-2.5 text-white">All Records</button>
+                        <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Institutions</button>
+                        <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Trainers</button>
+                        <button class="px-5 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800">Programs</button>
                     </div>
+                </div>
 
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- LIGHT SECTION --}}
-<section class="bg-[#f7f5f2] py-24 px-6 text-slate-900">
+    {{-- LIGHT SECTION (CANADIAN SOFT WHITE SHIFT ONLY) --}}
+<section class="bg-[#f6f7fb] py-24 px-6 text-slate-900">
     <div class="max-w-7xl mx-auto">
 
         <h2 class="text-6xl font-black mb-6 leading-none tracking-tight">
@@ -126,7 +158,6 @@
             <a href="{{ url('/registry/'.$item['slug']) }}"
                class="group block bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
 
-                {{-- IMAGE --}}
                 <div class="relative overflow-hidden aspect-[4/3]">
                     <img src="{{ asset('images/'.$item['image']) }}"
                          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
@@ -136,7 +167,6 @@
                     <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
 
-                {{-- CONTENT --}}
                 <div class="p-6 flex flex-col flex-grow">
 
                     <div class="flex justify-between items-center mb-4">
@@ -170,19 +200,13 @@
         </div>
     </div>
 </section>
+
 </div>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-</style>
 <script>
 function goVerify() {
-
     let query = document.getElementById('verifyInput').value.trim();
-
     if (!query) return;
-
     window.location.href = `/verify/search?query=${encodeURIComponent(query)}`;
 }
 </script>

@@ -23,7 +23,12 @@
         menu.classList.toggle('hidden');
     }
 </script>
-<body class="bg-white text-slate-800 overflow-x-hidden">
+<body class="bg-white text-slate-800 overflow-x-hidden relative">
+
+    <!-- 🇨🇦 Subtle Canada Background Texture -->
+    <div class="fixed inset-0 z-[-1] opacity-[0.035] pointer-events-none"
+         style="background-image: url('/images/canada-texture.jpg'); background-size: cover; background-position: center;">
+    </div>
 
 <!-- NAVBAR -->
 <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -31,22 +36,52 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
         <!-- LOGO -->
-        <a href="/" class="text-2xl font-black tracking-[-1px] text-black">
-            GESTAAC
+        <a href="/" class="flex items-center gap-2 text-2xl font-black tracking-[-1px] text-black">
+
+            <img src="{{ asset('images/logo.jpeg') }}"
+                alt="GESTAAC Logo"
+                class="h-8 w-auto object-contain">
+
+            <span>GESTAAC</span>
+
         </a>
 
         <!-- DESKTOP LINKS -->
         <ul class="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-wide">
 
-            <li><a href="/accreditation-pathways" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Accreditation</a></li>
+                <li>
+                    <a href="/accreditation-pathways"
+                    class="px-3 py-2 rounded transition
+                            hover:bg-red-50 hover:text-red-600">
+                        Accreditation
+                    </a>
+                </li>
 
-            <li><a href="/the-gestaac-standard" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Standard</a></li>
+                <li>
+                    <a href="/the-gestaac-standard"
+                    class="px-3 py-2 rounded transition
+                            hover:bg-red-50 hover:text-red-600">
+                        Standard
+                    </a>
+                </li>
 
-            <li><a href="/global-registry" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Registry</a></li>
+                <li>
+                    <a href="/global-registry"
+                    class="px-3 py-2 rounded transition
+                            hover:bg-red-50 hover:text-red-600">
+                        Registry
+                    </a>
+                </li>
 
-            <li><a href="/contact-authority" class="px-3 py-2 hover:bg-blue-50 hover:text-blue-600 rounded">Contact</a></li>
+                <li>
+                    <a href="/contact-authority"
+                    class="px-3 py-2 rounded transition
+                            hover:bg-red-50 hover:text-red-600">
+                        Contact
+                    </a>
+                </li>
 
-        </ul>
+            </ul>
 
         <!-- RIGHT ACTIONS (DESKTOP ONLY) -->
         <div class="hidden lg:flex items-center gap-4">
@@ -87,38 +122,65 @@
     </div>
 
     <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t bg-white">
+<div id="mobileMenu" class="hidden lg:hidden border-t bg-white">
 
-        <div class="px-6 py-4 flex flex-col gap-4 text-sm font-semibold uppercase">
+    <!-- subtle Canada flag stripe -->
+    <div class="h-[3px] bg-gradient-to-r from-red-600 via-white to-red-600"></div>
 
-            <a href="/accreditation-pathways">Accreditation Pathways</a>
-            <a href="/the-gestaac-standard">The Standard</a>
-            <a href="/global-registry">Registry</a>
-            <a href="/contact-authority">Contact</a>
+    <div class="px-6 py-5 flex flex-col gap-4 text-sm font-semibold uppercase tracking-wide">
 
-            <hr>
+        <a href="/accreditation-pathways"
+           class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+            Accreditation Pathways
+        </a>
 
-            @auth
-                <a href="{{ auth()->user()->role === 'admin' ? '/admin/dashboard' : '/partner/dashboard' }}">
-                    Dashboard
-                </a>
+        <a href="/the-gestaac-standard"
+           class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+            The Standard
+        </a>
 
-                <form method="POST" action="/logout">
-                    @csrf
-                    <button class="text-red-500 text-left">
-                        Logout
-                    </button>
-                </form>
-            @else
-                <a href="/login">Login</a>
-                <a href="/apply" class="text-blue-600">Apply Now</a>
-            @endauth
+        <a href="/global-registry"
+           class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+            Global Registry
+        </a>
 
-        </div>
+        <a href="/contact-authority"
+           class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+            Contact Authority
+        </a>
+
+        <hr class="my-2">
+
+        @auth
+            <a href="{{ auth()->user()->role === 'admin' ? '/admin/dashboard' : '/partner/dashboard' }}"
+               class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+                Dashboard
+            </a>
+
+            <form method="POST" action="/logout">
+                @csrf
+                <button class="text-red-600 text-left py-2 pl-3 font-bold uppercase">
+                    Logout
+                </button>
+            </form>
+        @else
+            <a href="/login"
+               class="py-2 border-l-2 border-transparent pl-3 hover:border-red-600 hover:text-red-600 transition">
+                Login
+            </a>
+
+            <a href="/apply"
+               class="bg-red-600 text-white text-center py-3 mt-2 font-bold tracking-widest hover:bg-red-700 transition">
+                Apply Now
+            </a>
+        @endauth
 
     </div>
 
+</div>
 </nav>
+<!-- 🇨🇦 Canada Identity Strip -->
+<div class="h-[3px] w-full bg-gradient-to-r from-[#d52b1e] via-white to-[#d52b1e]"></div>
 
 <!-- MAIN CONTENT -->
 <main>
@@ -177,6 +239,9 @@
             <p class="text-sm">📍 89 Galaxy Blvd, Toronto, ON M9W 6A4, Canada</p>
             <p class="text-sm">📞 +1 780-800-1824</p>
             <p class="text-sm mb-4">✉️ info@gestaac.ca</p>
+            <p class="text-[10px] uppercase tracking-widest text-[#d52b1e] mb-2">
+                Global Accreditation Authority • Canada
+            </p>
 
             <div class="flex gap-4 text-white opacity-70 text-lg">
                 <span>𝕏</span>

@@ -3,13 +3,16 @@
 @section('content')
 
 <!-- HERO TITLE -->
-<section class="py-12 md:py-16 bg-white">
+<section class="py-12 md:py-16 bg-white relative overflow-hidden">
 
-    <div class="max-w-5xl mx-auto px-6 flex justify-start">
+    <!-- CANADIAN AURA BACKGROUND -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#eef4ff]"></div>
+
+    <div class="max-w-5xl mx-auto px-6 flex justify-start relative z-10">
 
         <div class="text-left max-w-2xl">
 
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4 text-[#0f172a]">
                 ACCREDITATION PATHWAYS
             </h1>
 
@@ -24,7 +27,11 @@
 </section>
 
 <!-- TIMELINE -->
-<section class="bg-[#05070a] text-white py-24 relative overflow-hidden">
+<section class="bg-[#0b1f3a] text-white py-24 relative overflow-hidden">
+
+    <!-- subtle maple frost glow -->
+    <div class="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-red-500/5 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-[-140px] right-10 w-[420px] h-[420px] bg-blue-500/5 blur-3xl rounded-full"></div>
 
     <div class="max-w-6xl mx-auto px-6 relative">
 
@@ -35,7 +42,7 @@
         </div>
 
         <!-- vertical line -->
-        <div class="absolute left-1/2 top-0 bottom-0 w-px border-l border-dashed border-white/20 -translate-x-1/2 hidden md:block"></div>
+        <div class="absolute left-1/2 top-0 bottom-0 w-px border-l border-dashed border-white/15 -translate-x-1/2 hidden md:block"></div>
 
         <!-- ITEM 1 -->
         <div class="grid md:grid-cols-2 gap-12 items-center mb-28 relative">
@@ -46,14 +53,14 @@
             </div>
 
             <div class="md:pl-16">
-                <div class="text-[#b35a4f] text-xs font-bold tracking-widest mb-2">PHASE 01</div>
+                <div class="text-[#d90429] text-xs font-bold tracking-widest mb-2">PHASE 01</div>
                 <h3 class="text-2xl font-bold mb-4">APPLICATION SUBMISSION</h3>
                 <p class="text-white/70">
                     Submit your institutional profile through our secure portal. Initial review ensures eligibility and alignment with GESTAAC standards.
                 </p>
             </div>
 
-            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#b35a4f] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#b35a4f]/20"></div>
+            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#d90429] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#d90429]/20"></div>
         </div>
 
         <!-- ITEM 2 -->
@@ -65,14 +72,14 @@
             </div>
 
             <div class="md:order-1 md:text-right md:pr-16">
-                <div class="text-[#b35a4f] text-xs font-bold tracking-widest mb-2">PHASE 02</div>
+                <div class="text-[#d90429] text-xs font-bold tracking-widest mb-2">PHASE 02</div>
                 <h3 class="text-2xl font-bold mb-4">SELF-ASSESSMENT AUDIT</h3>
                 <p class="text-white/70">
                     Perform internal evaluation using the GESTAAC Framework to map curriculum, faculty, and outcomes.
                 </p>
             </div>
 
-            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#b35a4f] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#b35a4f]/20"></div>
+            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#d90429] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#d90429]/20"></div>
         </div>
 
         <!-- ITEM 3 -->
@@ -84,14 +91,14 @@
             </div>
 
             <div class="md:pl-16">
-                <div class="text-[#b35a4f] text-xs font-bold tracking-widest mb-2">PHASE 03</div>
+                <div class="text-[#d90429] text-xs font-bold tracking-widest mb-2">PHASE 03</div>
                 <h3 class="text-2xl font-bold mb-4">PEER REVIEW</h3>
                 <p class="text-white/70">
                     Global experts visit or audit your institution to validate standards and learning environment quality.
                 </p>
             </div>
 
-            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#b35a4f] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#b35a4f]/20"></div>
+            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#d90429] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#d90429]/20"></div>
         </div>
 
         <!-- ITEM 4 -->
@@ -103,27 +110,30 @@
             </div>
 
             <div class="md:order-1 md:text-right md:pr-16">
-                <div class="text-[#b35a4f] text-xs font-bold tracking-widest mb-2">PHASE 04</div>
+                <div class="text-[#d90429] text-xs font-bold tracking-widest mb-2">PHASE 04</div>
                 <h3 class="text-2xl font-bold mb-4">FINAL ACCREDITATION</h3>
                 <p class="text-white/70">
                     Successful institutions are added to the Global Registry of Excellence with official certification.
                 </p>
             </div>
 
-            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#b35a4f] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#b35a4f]/20"></div>
+            <div class="hidden md:block absolute left-1/2 top-1/2 w-3 h-3 bg-[#d90429] rotate-45 -translate-x-1/2 -translate-y-1/2 ring-8 ring-[#d90429]/20"></div>
         </div>
 
     </div>
 </section>
 
 <!-- WHY SECTION -->
-<section class="bg-white py-24">
-    <div class="max-w-6xl mx-auto px-6">
+<section class="bg-white py-24 relative overflow-hidden">
 
-        <span class="text-pink-600 text-xs font-bold tracking-widest">WHY GESTAAC?</span>
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#f1f5ff]"></div>
 
-        <h2 class="text-4xl md:text-5xl font-black mt-3 mb-6 leading-tight">
-            Elevating Standards through <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600">Excellence</span>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <span class="text-[#d90429] text-xs font-bold tracking-widest">WHY GESTAAC?</span>
+
+        <h2 class="text-4xl md:text-5xl font-black mt-3 mb-6 leading-tight text-[#0f172a]">
+            Elevating Standards through <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0b1f3a] to-[#d90429]">Excellence</span>
         </h2>
 
         <p class="text-gray-600 max-w-2xl mb-14">
@@ -133,7 +143,7 @@
         <div class="grid md:grid-cols-3 gap-10">
 
             <div>
-                <div class="w-14 h-14 bg-gray-100 flex items-center justify-center rounded mb-5">
+                <div class="w-14 h-14 bg-[#f1f5f9] flex items-center justify-center rounded mb-5">
                     ⚙️
                 </div>
                 <h3 class="text-xl font-bold mb-3">Global Recognition</h3>
@@ -143,7 +153,7 @@
             </div>
 
             <div>
-                <div class="w-14 h-14 bg-gray-100 flex items-center justify-center rounded mb-5">
+                <div class="w-14 h-14 bg-[#f1f5f9] flex items-center justify-center rounded mb-5">
                     🛡️
                 </div>
                 <h3 class="text-xl font-bold mb-3">Quality Assurance</h3>
@@ -153,7 +163,7 @@
             </div>
 
             <div>
-                <div class="w-14 h-14 bg-gray-100 flex items-center justify-center rounded mb-5 text-pink-600">
+                <div class="w-14 h-14 bg-[#f1f5f9] flex items-center justify-center rounded mb-5 text-[#d90429]">
                     📊
                 </div>
                 <h3 class="text-xl font-bold mb-3">Strategic Growth</h3>
@@ -167,11 +177,14 @@
 </section>
 
 <!-- FORM -->
-<section class="bg-gray-50 py-24">
-    <div class="max-w-6xl mx-auto px-6">
+<section class="bg-[#f7f7f9] py-24 relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-[#f8fafc] to-[#eef4ff]"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
 
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-black mb-4">Inquire About Accreditation</h2>
+            <h2 class="text-4xl font-black mb-4 text-[#0f172a]">Inquire About Accreditation</h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
                 Begin your journey toward global recognition.
             </p>
@@ -201,7 +214,7 @@
                                 Registrar Name
                             </label>
                             <input type="text" name="contact_person"
-                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400"
+                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429]"
                                 placeholder="Dr. Alexander Sterling">
                         </div>
 
@@ -210,7 +223,7 @@
                                 Official Email
                             </label>
                             <input type="email" name="email"
-                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400"
+                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429]"
                                 placeholder="registrar@institution.edu">
                         </div>
                     </div>
@@ -222,7 +235,7 @@
                                 Institution Name
                             </label>
                             <input type="text" name="institution_name"
-                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400"
+                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429]"
                                 placeholder="Global Institute of Tech">
                         </div>
 
@@ -231,19 +244,19 @@
                                 Contact Number
                             </label>
                             <input type="text" name="phone"
-                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400"
+                                class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429]"
                                 placeholder="+1 (613) 555-0199">
                         </div>
                     </div>
 
-                    <!-- Category -->
+                    <!-- CATEGORY -->
                     <div>
                         <label class="block text-[10px] font-black uppercase tracking-widest text-[#1a1e26] mb-2">
                             Category
                         </label>
 
                         <select name="category"
-                            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400">
+                            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429]">
                             <option value="">Select Category</option>
                             <option value="university">University</option>
                             <option value="college">College</option>
@@ -252,20 +265,20 @@
                         </select>
                     </div>
 
-                    <!-- Description -->
+                    <!-- DESCRIPTION -->
                     <div>
                         <label class="block text-[10px] font-black uppercase tracking-widest text-[#1a1e26] mb-2">
                             Institution Overview
                         </label>
 
                         <textarea name="description" rows="4"
-                            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-gray-400 resize-none"
+                            class="w-full bg-[#f9fafb] border border-gray-200 p-3.5 text-sm outline-none focus:border-[#d90429] resize-none"
                             placeholder="Brief description of your institution..."></textarea>
                     </div>
 
-                    <!-- Submit -->
+                    <!-- SUBMIT -->
                     <button type="submit"
-                        class="w-full bg-[#131722] text-white font-black py-4 flex items-center justify-center gap-3 text-[11px] tracking-widest uppercase hover:bg-black transition-colors">
+                        class="w-full bg-[#0b1f3a] text-white font-black py-4 flex items-center justify-center gap-3 text-[11px] tracking-widest uppercase hover:bg-[#06101f] transition">
                         Submit for Review
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                             <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -276,8 +289,11 @@
             </div>
 
             <!-- SUMMARY -->
-            <div class="bg-white border-t-4 border-pink-600 p-6 shadow-sm">
-                <h4 class="font-black mb-4 uppercase text-sm tracking-widest">Summary</h4>
+            <div class="bg-white border-t-4 border-[#d90429] p-6 shadow-sm">
+
+                <h4 class="font-black mb-4 uppercase text-sm tracking-widest text-[#0f172a]">
+                    Summary
+                </h4>
 
                 <p class="text-sm text-gray-500">No category selected</p>
                 <p class="text-sm text-gray-500 mt-2">No timeline selected</p>
@@ -285,9 +301,11 @@
                 <div class="mt-6 text-[10px] text-gray-400 uppercase tracking-widest">
                     GESTAAC Private Authority Notice
                 </div>
+
             </div>
 
         </div>
     </div>
 </section>
+
 @endsection
