@@ -48,6 +48,11 @@
                     👥 Partners
                 </a>
 
+                <a href="/admin/student-accreditation"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition">
+                    🎓 Student Accreditation
+                </a>
+
             <a href="/admin/certificates"
             class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition">
                 🎓 Certificates

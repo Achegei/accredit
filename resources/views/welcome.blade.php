@@ -47,6 +47,11 @@
                         Apply for Accreditation →
                     </a>
 
+                    <a href="{{ route('student-accreditation.create') }}"
+                    class="border border-gray-300 text-gray-800 px-8 py-5 font-bold hover:bg-gray-100 transition">
+                        Student Verification →
+                    </a>
+
                     <a href="{{ route('the-gestaac-standard') }}"
                        class="border border-black text-black px-8 py-5 font-bold hover:bg-black hover:text-white transition">
                         View Standards

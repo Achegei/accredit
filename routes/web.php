@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\RegistryController;
+use App\Http\Controllers\StudentAccreditationController;
 /*
 |--------------------------------------------------------------------------
 | 🌐 PUBLIC PAGES
@@ -249,6 +250,28 @@ Route::prefix('admin')
 
 
         /*
+            |--------------------------------------------------------------------------
+            | 🎓 STUDENT ACCREDITATION APPLICATIONS
+            |--------------------------------------------------------------------------
+            */
+
+            Route::get('/student-accreditation', [
+                \App\Http\Controllers\Admin\StudentAccreditationController::class,
+                'index'
+            ])->name('admin.student-accreditation.index');
+
+            Route::get('/student-accreditation/{id}', [
+                \App\Http\Controllers\Admin\StudentAccreditationController::class,
+                'show'
+            ])->name('admin.student-accreditation.show');
+
+            Route::post('/student-accreditation/{id}/status', [
+                \App\Http\Controllers\Admin\StudentAccreditationController::class,
+                'updateStatus'
+            ])->name('admin.student-accreditation.status');
+
+
+        /*
         |--------------------------------------------------------------------------
         | 🎓 ISSUED CERTIFICATES (FINAL CERTS TABLE)
         |--------------------------------------------------------------------------
@@ -268,3 +291,19 @@ Route::prefix('admin')
         // Student search for certificate verification
         Route::get('students/search', [AdminStudentController::class, 'search']);
     });
+
+/*
+|--------------------------------------------------------------------------
+| 🎓 STUDENT ACCREDITATION
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/student-accreditation', [
+    StudentAccreditationController::class,
+    'create'
+])->name('student-accreditation.create');
+
+Route::post('/student-accreditation', [
+    StudentAccreditationController::class,
+    'store'
+])->name('student-accreditation.store');
